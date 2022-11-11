@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.1.js">
+    <link rel="icon" href="{% static 'home/favicon2.png' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/main.js' %}">
+    <link rel="stylesheet" href="{% static 'js/jquery.js' %}">
+    <script type="application/javascript" src="/eel.py"></script>
+
+    <style>
+        a {
+            color: white;
+        }
+
+        .hovereffect:hover {
+            /* background-color: aqua; */
+            margin-top: -2px;
+            box-shadow: 0 0 5px rgba(99, 99, 99, 0.8);
+        }
+
+        .hovereffects:hover {
+            /* background-color: aqua; */
+            transform: scale(1.002);
+            box-shadow: 0 0 5px rgba(99, 99, 99, 0.8);
+        }
+    </style>
+
+
+
+    {% block style %}{% endblock style %}
+
+</head>
+
+
+<body style="overflow: hidden;">
+    {% load static %}
+    <nav class="navbar navbar-expand-lg py-2 pb-3   " style="text-align:center;background-color: rgba(32,32,32,255);">
+
+        <ul class="col mx-3 my-0">
+            <div style="display:inline-block;float:left;margin-left: -35px;">
+
+                <ul class="btnbox shadow-lg">
+
+                    <li> <button onclick="sidemenuboxfun()" title="Side MenuBar"><img
+                                src="https://img.icons8.com/ios-filled/512/menu-rounded.png" height="30px"
+                                alt=""></button></li>
+                    <li><button><a href="{{pre}}" title="Previous Page"><span class="carousel-control-prev-icon"
+                                    aria-hidden="true"></span></a></button></li>
+                    <!-- <li><button><a href="#"></a><span class="carousel-control-next-icon" aria-hidden="true"></span></button></li> -->
+                    <li><button onclick="window.location.reload()" title="Reload Page"><a href="#"><i
+                                    style="font-size:150%;" class="bi bi-arrow-clockwise"></i></a></button></li>
+                </ul>
+
+
+            </div>
+
+            <div style="display:inline-block;width: 60%;" >
+                <form style="display:flex;" action="#" method="get" id="searchbox">
+                    <input type="search" name="search" id="search" class="form-control"
+                        style="height:35px;background-image:url('{% static 'home/search.png' %}');background-repeat: no-repeat;background-size: 30px 30px;background-position: center left;padding-left: 38px;"
+                        placeholder="Search for a software. . .">
+
+                    <input type="submit" value="search" class="btn btn-primary mx-2 "
+                        style="height:35px;padding: 2px 10px;"
+                        onclick="document.getElementById('searchbox').action='/home/one/search='+document.getElementById('search').value">
+                </form>
+            </div>
+            <div style="display:inline-block;float:right;height: 100%;">
+
+                <a href="#" style="width:40px;height:40px;border-radius:50%;">
+                    <img src="https://tenali786.github.io/Img/logo.png"
+                        style="width:40px;border-radius:50%;height:40px;" alt="">
+                </a>
+
+
+
+            </div>
+        </ul>
+
+
+
+    </nav>
+
+
+    <div class="container-fluid " style="background-color: rgba(32,32,32,255);">
+        <div class="row flex-nowrap ">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 "
+                style="width:16% ;background-color: rgba(32,32,32,255);transition: all 5s;" id="sidemenubox">
+                <div
+                    class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 ">
+
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start listulitem"
+                        id="menu">
+                        <li class="nav-item ">
+                            <a href="/home/hello" class="nav-link align-middle  text-light">
+                                <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/home/one" data-bs-toggle="collapse" class="text-light nav-link align-middle">
+                                <i class="fs-4 bi-speedometer2 text-light"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
+
+                        </li>
+                        <li>
+                            <a href="/admin/" class="nav-link  align-middle text-light">
+                                <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Orders</span></a>
+                        </li>
+                        <li>
+                            <a href="#submenu2" data-bs-toggle="collapse" class=" text-light nav-link  align-middle ">
+                                <i class="fs-4 bi-bootstrap"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class=" text-light nav-link "> <span
+                                            class="d-none d-sm-inline">Item</span>
+                                        1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-light nav-link "> <span
+                                            class="d-none d-sm-inline">Item</span>
+                                        2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#submenu3" data-bs-toggle="collapse" class="text-light nav-link  align-middle">
+                                <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Products</span> </a>
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a href="#" class="text-light nav-link "> <span
+                                            class="d-none d-sm-inline">Product</span>
+                                        1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-light nav-link "> <span
+                                            class="d-none d-sm-inline">Product</span>
+                                        2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-light nav-link "> <span
+                                            class="d-none d-sm-inline">Product</span>
+                                        3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="text-light nav-link"> <span
+                                            class="d-none d-sm-inline">Product</span>
+                                        4</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" class="text-light nav-link  align-middle">
+                                <i class="text-light fs-4 bi-people"></i> <span
+                                    class="ms-1 d-none d-sm-inline">Customers</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="#"
+                            class="text-light d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30"
+                                class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">loser</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                            <li><a class="text-light dropdown-item" href="#">New project...</a></li>
+                            <li><a class="text-light dropdown-item" href="#">Settings</a></li>
+                            <li><a class="text-light dropdown-item" href="#">Profile</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="text-light dropdown-item" href="#">Sign out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col py-3 mainhome">
+                <div class=" mb-3 my-0 mx-0" style="margin-top:0%;">
+                    {% block crousels %} {% endblock crousels %}
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-6 g-4 mb-4">
+                    {% block content %} {% endblock content %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk"
+        crossorigin="anonymous"></script>
+
+
+    <!-- <script type="text/javascript" src="eel.js"></script> -->
+    <script type="text/javascript">
+        var shows = 0;
+        function sidemenuboxfun() {
+
+            if (shows == 0) {
+                document.getElementById("sidemenubox").style.display = "none";
+                shows = 1;
+                console.log(shows)
+            }
+            else {
+                document.getElementById("sidemenubox").style.display = "block";
+                shows = 0;
+                console.log(shows)
+
+            }
+        }
+
+        function setAction(){
+            document.getElementById('searchbox').setAttribute('action',)
+        }
+    </script>
+    {% block js %}{% endblock js %}
+</body>
+
+</html>

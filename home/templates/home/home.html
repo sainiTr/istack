@@ -1,0 +1,178 @@
+{% extends 'home/basic.html' %}
+{% block title %}iStack | Dashboard {% endblock title %}
+
+{% block crousels %}
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+        <div class="carousel-item active  " style="font-weight: bold;">
+
+            <div class="d-block w-100 "
+                style="height:40vh;border-radius: 5px;background-image:url('https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/10%20Best%20Free%20Drawing%20Software%20Programs1648746189412811.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
+
+                <div class="row" style="width:95%;position:absolute;bottom: 1%;margin:0 2.5%;">
+                    <h5 style="text-align:left;padding-left:100px;padding-bottom:30px;color:rgb(255, 255, 255);">These
+                        are the most usefull apps for your computer</h5>
+                    {% for item in data %}
+                    <a href="/home/one/{{lists.0.id}}" class="col-md-1  " style="margin: 1px 5.2%;">
+                        <div class="hovereffects row" style="width:150px;height:120px;border-radius: 5px;">
+                            <div
+                                style="border-radius:8px;width: 100;height: 100%;background-image: linear-gradient(rgba(11, 44, 192, 0.5),rgba(14, 128, 170, 0.681)),url(/media/{{lists.0.icon}});background-position: center center;background-repeat: no-repeat;background-size: cover;">
+                            </div>
+
+                            <div style="position:absolute;bottom:15%;color:rgb(255, 255, 255);margin: 0 10px;">
+                                <h6>{{lists.0.name}}</h6>
+                                <p><span>Free</span>  <span style="margin:5px;border-left:1px solid gray;padding-left:8px;">ver: {{lists.0.version}}</span> </p>
+                            </div>
+
+                        </div>
+                    </a>
+                    {% endfor %}
+                    <h6 style="width: 100%;text-align:right;color:white;"> <a class="text-light" href="#">See all</a>
+                    </h6>
+                </div>
+
+            </div>
+
+            <div class="carousel-caption d-none d-md-block">
+
+                <!-- <h5>First slide label</h5>
+                <p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+        </div>
+
+        <div class="carousel-item" style="font-weight: bold;">
+
+            <div class="d-block w-100 "
+                style="height:40vh;border-radius: 5px;background-image:url('https://www.arkasoftwares.com/images/og-images/arka-softwares-og.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
+
+                <div class="row" style="width:95%;position:absolute;bottom: 1%;margin:0 2.5%;">
+                    <h5 style="text-align:left;padding-left:100px;padding-bottom:30px;color:rgb(255, 255, 255);">These
+                        are the most usefull apps for your computer</h5>
+                    {% for item in data %}
+                    <a href="/home/one/{{lists.0.id}}" class=" col-md-1 " style="margin: 1px 5.2%;">
+                        <div class="hovereffects row" style="width:150px;height:120px;border-radius: 5px;">
+                            <div
+                                style="border-radius:8px;width: 100;height: 100%;background-image: linear-gradient(rgba(29, 172, 179, 0.5),rgba(32, 125, 196, 0.5)),url(/media/{{lists.0.icon}});background-position: center center;background-repeat: no-repeat;background-size: cover;">
+                            </div>
+
+                            <div style="position:absolute;bottom:15%;color:rgb(255, 255, 255);margin: 0 10px;">
+                                <h6>{{lists.0.name}}</h6>
+                                <p><span>Free</span>  <span style="margin:5px;border-left:1px solid gray;padding-left:8px;">ver: {{lists.0.version}}</span> </p>
+                            </div>
+
+                        </div>
+                    </a>
+                    {% endfor %}
+                    <h6 style="width: 100%;text-align:right;color:white;"> <a class="text-light" href="#">See all</a>
+                    </h6>
+                </div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <div class="row" style="width:100%;justify-content:center;">
+                    <div class="col-md-1 mx-2"
+                        style="width:140px;height:100px;padding:2px 2px;background-color:blue;border-radius: 5px;background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/media/{{lists.0.icon}}');background-size: cover;background-position: center center;">
+                        lkjdfklasjdlf</div>
+                    <div class="col-md-1 mx-2"
+                        style="width:140px;height:100px;padding:2px 2px;background-color:blue;border-radius: 5px;background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/media/{{lists.0.icon}}');background-size: cover;background-position: center center;">
+                        lkjdfklasjdlf</div>
+                    <div class="col-md-1 mx-2"
+                        style="width:140px;height:100px;padding:2px 2px;background-color:blue;border-radius: 5px;background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/media/{{lists.0.icon}}');background-size: cover;background-position: center center;">
+                        lkjdfklasjdlf</div>
+                    <div class="col-md-1 mx-2"
+                        style="width:140px;height:100px;padding:2px 2px;background-color:blue;border-radius: 5px;background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/media/{{lists.0.icon}}');background-size: cover;background-position: center center;">
+                        lkjdfklasjdlf</div>
+                    <div class="col-md-1 mx-2"
+                        style="width:140px;height:100px;padding:2px 2px;background-color:blue;border-radius: 5px;background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url('/media/{{lists.0.icon}}');background-size: cover;background-position: center center;">
+                        lkjdfklasjdlf</div>
+                </div> -->
+                <!-- <h5>Second slide label</h5>
+                <p>Some representative placeholder content for the second slide.</p> -->
+            </div>
+        </div>
+
+        <div class="carousel-item" style="font-weight: bold;">
+
+            <div class="d-block w-100 "
+                style="height:40vh;border-radius: 5px;background-image:url('https://cdn-developer-wp.arc.dev/wp-content/uploads/2021/12/Do-I-Need-a-Software-Engineering-Degree.jpg');background-repeat: no-repeat;background-size: cover;background-position: center center;">
+
+                <div class="row" style="width:95%;position:absolute;bottom: 1%;margin:0 2.5%;">
+                    <h5 style="text-align:left;padding-left:100px;padding-bottom:30px;color:rgb(255, 255, 255);">These
+                        are the most usefull apps for your computer</h5>
+                    {% for item in data %}
+                    <a href="/home/one/{{lists.0.id}}" class="col-md-1 " style="margin: 1px 5.2%;">
+                        <div class="hovereffects row" style="width:150px;height:120px;border-radius: 5px;">
+                            <div
+                                style="border-radius:8px;width: 100;height: 100%;background-image: linear-gradient(rgba(35, 136, 212, 0.5),rgba(9, 140, 147, 0.657)),url(/media/{{lists.0.icon}});background-position: center center;background-repeat: no-repeat;background-size: cover;">
+                            </div>
+
+                            <div style="position:absolute;bottom:15%;color:rgb(255, 255, 255);margin: 0 10px;">
+                                <h6>{{lists.0.name}}</h6>
+                                <p><span>Free</span>  <span style="margin:5px;border-left:1px solid gray;padding-left:8px;">ver: {{lists.0.version}}</span> </p>
+                            </div>
+
+                        </div>
+                    </a>
+                    {% endfor %}
+                    <h6 style="width: 100%;text-align:right;color:white;"> <a class="text-light" href="#">See all</a>
+                    </h6>
+                </div>
+            </div>
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>Third slide label</h5>
+                <p>Some representative placeholder content for the third slide.</p> -->
+            </div>
+        </div>
+    </div>
+
+    <button class="carousel-control-prev" style="width:7%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next"  style="width:7%;" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+{% endblock crousels %}
+
+
+{% block content %}
+
+{% for i in num %}
+{% for item in lists %}
+
+<div class="col ">
+    <a href="/home/one/{{item.id}}" class="hovereffect card" style="background-color:rgba(46,46,46,255);text-decoration: none;">
+        <div>
+            <img src="/media/{{item.icon}}"
+                style="width:90px;border-radius:1%;height:90px;margin: 8px 30px;background-color: transparent;"
+                alt="...">
+            <div class="card-body" >
+
+                <h6 class="card-title" style="color:white;">{{item.name}}</h6>
+                <p class="card-text" style="color:white;">Rating: 4.6k <i style="color:yellow;" class="bi bi-star-fill"></i></p>
+                <p class="card-text" style="color:white;">version: {{item.version}}.</p>
+                <p class="card-text" style="color:white;"> <span
+                        style="padding:2px 5px;background-color:rgb(36, 36, 36);border-radius: 3px;">{{item.type}}</span> :
+                    <span>{{item.position|title}}</span>
+                </p>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+{% endfor %}
+{% endfor %}
+{% endblock content %}

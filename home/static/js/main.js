@@ -1,0 +1,4 @@
+
+function InstallNow(){
+    alert("Donwloading....")
+}
